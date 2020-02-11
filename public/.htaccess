@@ -1,0 +1,14 @@
+<IfModule mod_rewrite.c>  
+  Allow from all
+
+  #Deny from 198.2.2.2
+
+
+  Options -Indexes
+  Options +FollowSymLinks
+  
+  RewriteEngine on
+
+  RewriteCond $1 !^(index\.php|robots\.txt)
+  RewriteRule ^([^?]*) index.php?request=$1 [L,QSA]
+</IfModule>
